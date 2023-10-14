@@ -1,13 +1,25 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
 header {
     background-color: #333;
     color: #fff;
@@ -20,66 +32,28 @@ header nav {
     align-items: center;
 }
 
-header nav ul {
+header h1 {
+    font-size: 24px;
+}
+
+header ul {
     list-style: none;
     display: flex;
 }
 
-header nav ul li {
+header ul li {
     margin-right: 20px;
 }
 
-header nav a {
+header a {
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    padding: 40px 0;
-}
-
-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.portfolio-items {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.portfolio-items > div {
-    width: 33.33%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input,
-textarea {
-    margin: 10px 0;
-    padding: 10px;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-}
-
-button:hover {
-    background-color: #555;
+header a:hover {
+    color: #ff8c00; /* Change the color on hover */
 }
 
 .menu-button {
@@ -88,6 +62,7 @@ button:hover {
     cursor: pointer;
 }
 
+/* Mobile Menu */
 .mobile-menu {
     display: none;
     background-color: #333;
@@ -96,20 +71,84 @@ button:hover {
     left: 0;
     right: 0;
     z-index: 1;
+    padding: 10px 0;
 }
 
 .mobile-nav-list {
     list-style: none;
-    padding: 10px;
+    text-align: center;
 }
 
 .mobile-nav-list li {
     padding: 10px 0;
+}
+
+.mobile-nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.mobile-nav-list a:hover {
+    color: #ff8c00; /* Change the color on hover */
+}
+
+/* Sections */
+section {
+    padding: 40px 0;
     text-align: center;
 }
 
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Portfolio Items */
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.portfolio-items > div {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .nav-list {
+    header ul {
         display: none;
     }
 
@@ -124,6 +163,6 @@ button:hover {
 
 @media (max-width: 480px) {
     .portfolio-items > div {
-        width: 100%;
+        flex: 0 0 calc(50% - 20px);
     }
 }
